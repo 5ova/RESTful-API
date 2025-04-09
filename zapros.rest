@@ -1,0 +1,9 @@
+### Создать новую задачу
+GET http://127.0.0.1:5000/tasks
+Content-Type: application/json
+
+###{
+    "title": "1",
+    "description": "description",
+    "completed": false
+###}
