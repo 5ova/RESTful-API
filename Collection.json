@@ -1,0 +1,96 @@
+{
+    "info": {
+        "name": "Todo API",
+        "description": "Коллекция запросов для тестирования RESTful API управления задачами",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Tasks",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/tasks",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "5000",
+                    "path": ["tasks"]
+                },
+                "description": "Получить список всех задач"
+            }
+        },
+        {
+            "name": "Get Task by ID 1",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/tasks/1",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "5000",
+                    "path": ["tasks", "1"]
+                },
+                "description": "Получить задачу с ID 1 (замените 1 на реальный ID после создания задачи)"
+            }
+        },
+        {
+            "name": "Create Task",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {"key": "Content-Type", "value": "application/json"}
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Купить молоко\",\n    \"description\": \"Сходить в магазин\",\n    \"completed\": false\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/tasks",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "5000",
+                    "path": ["tasks"]
+                },
+                "description": "Создать новую задачу с указанным телом"
+            }
+        },
+        {
+            "name": "Update Task ID 1",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {"key": "Content-Type", "value": "application/json"}
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"title\": \"Купить молоко (обновлено)\",\n    \"description\": \"Сходить в магазин за молоком\",\n    \"completed\": true\n}"
+                },
+                "url": {
+                    "raw": "http://127.0.0.1:5000/tasks/1",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "5000",
+                    "path": ["tasks", "1"]
+                },
+                "description": "Обновить задачу с ID 1 (замените 1 на реальный ID)"
+            }
+        },
+        {
+            "name": "Delete Task ID 1",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                    "raw": "http://127.0.0.1:5000/tasks/1",
+                    "protocol": "http",
+                    "host": ["127.0.0.1"],
+                    "port": "5000",
+                    "path": ["tasks", "1"]
+                },
+                "description": "Удалить задачу с ID 1 (замените 1 на реальный ID)"
+            }
+        }
+    ]
+}
